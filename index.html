@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry - Industrial HTML Template</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            color: #636363;
+            line-height: 1.8;
+            font-size: 15px;
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .top-bar {
+            background: #000;
+            color: #fff;
+            font-size: 14px;
+            padding: 12px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left .social-icons a {
+            color: #fff;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .top-bar-left .social-icons a:hover {
+            color: #ffc107;
+        }
+
+        .top-bar-right span {
+            margin-left: 25px;
+        }
+
+        .top-bar-right i {
+            color: #ffc107;
+            margin-right: 8px;
+        }
+
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #ffc107;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: inline-block;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-menu li a {
+            font-weight: 500;
+            color: #111;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover, .nav-menu li a.active {
+            color: #ffc107;
+        }
+
+        .nav-menu li a i {
+            font-size: 11px;
+            margin-left: 4px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h6 {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #d1d8e0;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .btn-yellow {
+            background: #ffc107;
+            color: #111;
+            padding: 15px 35px;
+            border-radius: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-yellow:hover {
+            background: #e0a800;
+        }
+
+        .services-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .hex-icon {
+            width: 80px;
+            height: 70px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            position: relative;
+            font-size: 26px;
+            color: #555;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .hex-icon {
+            background: #ffc107;
+            border-color: #ffc107;
+            color: #fff;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: #111;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #777;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .quote-section {
+            padding: 110px 0;
+            background: #fdfdfd;
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .quote-left h5 {
+            color: #ffc107;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .quote-left h2 {
+            font-size: 42px;
+            color: #111;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 25px;
+        }
+
+        .quote-left p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .quote-form-box {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            padding: 45px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-form-box h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            color: #333;
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: #666;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 110px;
+        }
+
+        .sectors-section {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: #111;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: left;
+        }
+
+        .sector-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .sector-card h3 {
+            font-size: 20px;
+            color: #111;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .sector-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .stats-section {
+            background: linear-gradient(rgba(0, 35, 71, 0.85), rgba(0, 35, 71, 0.85)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 90px 0;
+            color: #fff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-circle {
+            width: 130px;
+            height: 130px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .stat-inner {
+            width: 105px;
+            height: 105px;
+            background: #ffc107;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .stat-item h4 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .projects-section {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .projects-grid img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .testimonial-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-content h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-content p.sub {
+            color: #ddd;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-card-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 6px;
+            overflow: hidden;
+            text-align: left;
+            align-items: center;
+        }
+
+        .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 280px;
+        }
+
+        .testimonial-text {
+            padding: 40px;
+        }
+
+        .testimonial-text h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .blog-section {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .blog-meta img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0;
+        }
+
+        .blog-card h4 {
+            font-size: 18px;
+            color: #111;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .footer {
+            background: #080c14;
+            color: #8a909d;
+            padding: 90px 0 30px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.3fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .footer p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 18px;
+            background: #fff;
+            border: none;
+            border-radius: 3px 0 0 3px;
+            outline: none;
+            color: #333;
+        }
+
+        .newsletter-form button {
+            background: #ffc107;
+            border: none;
+            padding: 0 22px;
+            border-radius: 0 3px 3px 0;
+            color: #111;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #e0a800;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        .footer-socials a:hover {
+            background: #ffc107;
+            color: #111;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 30px;
+            text-align: center;
+            color: #777;
+        }
+
+        .footer-bottom span {
+            color: #ffc107;
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 40px; }
+            .services-grid, .quote-grid, .sectors-grid, .stats-grid, .projects-grid, .blog-grid, .footer-grid { grid-template-columns: 1fr; }
+            .testimonial-card-box { grid-template-columns: 1fr; }
+            .top-bar { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-globe"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa fa-phone"></i> +880 012 3654 896</span>
+                <span><i class="fa fa-envelope"></i> support@colorlib.com</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <span class="logo-icon"></span>
+                    Industry
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICE</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="#">BLOG <i class="fa fa-chevron-down"></i></a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="elements.html">ELEMENTS</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h6>DON'T LOOK FURTHER, HERE IS THE KEY</h6>
+                <h1>We're Industrial solution</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. sed do eiusmod tempor incididunt.</p>
+                <a href="get_start.html" class="btn-yellow">GET STARTED</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="hex-icon">
+                        <i class="fa fa-magic"></i>
+                    </div>
+                    <h3>Maintenance</h3>
+                    <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct standards especially in the workplace. That's why.</p>
+                </div>
+                <div class="service-card">
+                    <div class="hex-icon">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <h3>Residential Service</h3>
+                    <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct standards especially in the workplace. That's why.</p>
+                </div>
+                <div class="service-card">
+                    <div class="hex-icon">
+                        <i class="fa fa-bug"></i>
+                    </div>
+                    <h3>Commercial Service</h3>
+                    <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct standards especially in the workplace. That's why.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-grid">
+                <div class="quote-left">
+                    <h5>Brand new app to blow your mind</h5>
+                    <h2>We've made a life that will change you</h2>
+                    <p>We are here to listen from you deliver exellence</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                    <a href="#" class="btn-yellow">Get Started Now</a>
+                </div>
+                <div class="quote-right">
+                    <div class="quote-form-box">
+                        <h3>Request a Quote</h3>
+                        <form>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>Select Service</option>
+                                    <option>Maintenance</option>
+                                    <option>Residential Service</option>
+                                    <option>Commercial Service</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn-yellow" style="width: 100%;">Request Free Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sectors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Capturing Market Sectors</h2>
+                <p>Who are in extremely love with eco friendly system..</p>
+            </div>
+            <div class="sectors-grid">
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Automotive Engineering">
+                    <h3>Automotive Engineering</h3>
+                    <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct "boys will be boys women face higher conduct.</p>
+                </div>
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Construction & Engineering">
+                    <h3>Construction & Engineering</h3>
+                    <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct "boys will be boys women face higher conduct.</p>
+                </div>
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Industrial Engineering">
+                    <h3>Industrial Engineering</h3>
+                    <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct "boys will be boys women face higher conduct.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-inner">2K+</div>
+                    </div>
+                    <h4>Projects Completed</h4>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-inner">5.5K</div>
+                    </div>
+                    <h4>Total Employees</h4>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-inner">959</div>
+                    </div>
+                    <h4>Happy Clients</h4>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-inner">367</div>
+                    </div>
+                    <h4>Tickets Submitted</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Finished Projects</h2>
+                <p>Who are in extremely love with eco friendly system..</p>
+            </div>
+            <div class="projects-grid">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Project 1">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Project 2">
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content">
+                <h2>Enjoy our Client’s Feedback</h2>
+                <p class="sub">Who are in extremely love with eco friendly system..</p>
+                <div class="testimonial-card-box">
+                    <div class="testimonial-img">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="Fannie Rowe">
+                    </div>
+                    <div class="testimonial-text">
+                        <h3>Fannie Rowe</h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star" style="color: #666;"></i>
+                        </div>
+                        <p>Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Posts From Our Blog</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Blog 1">
+                    <div class="blog-meta">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Mark Wiens">
+                        <span>Mark Wiens</span>
+                        <span>13th Dec</span>
+                        <span><i class="fa fa-heart"></i> 15</span>
+                        <span><i class="fa fa-comment"></i> 04</span>
+                    </div>
+                    <h4>PORTABLE FASHION FOR YOUNG WOMEN</h4>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Blog 2">
+                    <div class="blog-meta">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Mark Wiens">
+                        <span>Mark Wiens</span>
+                        <span>13th Dec</span>
+                        <span><i class="fa fa-heart"></i> 15</span>
+                        <span><i class="fa fa-comment"></i> 04</span>
+                    </div>
+                    <h4>PORTABLE FASHION FOR YOUNG WOMEN</h4>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Blog 3">
+                    <div class="blog-meta">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Mark Wiens">
+                        <span>Mark Wiens</span>
+                        <span>13th Dec</span>
+                        <span><i class="fa fa-heart"></i> 15</span>
+                        <span><i class="fa fa-comment"></i> 04</span>
+                    </div>
+                    <h4>PORTABLE FASHION FOR YOUNG WOMEN</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Stay update with our latest</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter Email">
+                        <button type="submit"><i class="fa fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <p>Let us be social</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright ©2026 All rights reserved | This template is made with <i class="fa fa-heart" style="color: #ffc107;"></i> by <span>Colorlib</span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

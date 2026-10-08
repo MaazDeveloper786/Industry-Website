@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Industry</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #04091e;
+            color: #fff;
+            font-size: 13px;
+            padding: 12px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-social a {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .top-bar-social a:hover {
+            color: #ffb400;
+        }
+
+        .top-bar-contact span {
+            margin-left: 25px;
+        }
+
+        .top-bar-contact i {
+            color: #ffb400;
+            margin-right: 8px;
+        }
+
+        /* Header / Navbar */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+        }
+
+        .logo a {
+            font-size: 26px;
+            font-weight: 700;
+            color: #04091e;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            color: #ffb400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #222;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffb400;
+        }
+
+        .nav-links .dropdown-icon {
+            font-size: 10px;
+            margin-left: 3px;
+        }
+
+        /* Breadcrumb Banner Section */
+        .breadcrumb-section {
+            background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .breadcrumb-section h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .breadcrumb-nav {
+            font-size: 15px;
+            color: #ccc;
+        }
+
+        .breadcrumb-nav a {
+            color: #fff;
+        }
+
+        .breadcrumb-nav span {
+            margin: 0 8px;
+            color: #ffb400;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .contact-title {
+            font-size: 28px;
+            color: #04091e;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form textarea,
+        .contact-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            outline: none;
+            font-size: 14px;
+            color: #333;
+            background: #fdfdfd;
+        }
+
+        .contact-form textarea:focus,
+        .contact-form input:focus {
+            border-color: #ffb400;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-form textarea {
+            height: 160px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background: #ffb400;
+            color: #04091e;
+            border: none;
+            padding: 14px 35px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #04091e;
+            color: #fff;
+        }
+
+        /* Contact Info Details */
+        .contact-info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #ffb400;
+            margin-top: 5px;
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            color: #04091e;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Map Section Placeholder */
+        .map-section {
+            width: 100%;
+            height: 400px;
+            background: #eee;
+            margin-bottom: -20px;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #04091e;
+            color: #fff;
+            padding: 80px 0 40px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            outline: none;
+            background: #fff;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .newsletter-form button {
+            background: #ffb400;
+            border: none;
+            padding: 0 20px;
+            color: #04091e;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #e5a200;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 38px;
+            height: 38px;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #ffb400;
+            color: #04091e;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .footer-bottom span {
+            color: #ffb400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar, .nav-links {
+                display: none;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .breadcrumb-section h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-globe"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+            </div>
+            <div class="top-bar-contact">
+                <span><i class="fas fa-phone-alt"></i> +880 012 3654 896</span>
+                <span><i class="fas fa-envelope"></i> support@colorlib.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-industry"></i> Industry
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Service</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#">Blog <i class="fas fa-angle-down dropdown-icon"></i></a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#">Elements</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Banner Section -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <h1>Contact</h1>
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span>&gt;</span>
+                Contact Us
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left: Form (Name, Email, Subject on Top & Message at Bottom) -->
+                <div class="contact-form-wrapper">
+                    <h2 class="contact-title">Get in Touch</h2>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="form-row">
+                            <input type="text" placeholder="Enter your name" required>
+                            <input type="email" placeholder="Enter email address" required>
+                        </div>
+                        <input type="text" placeholder="Enter Subject" required>
+                        <textarea placeholder="Enter Message" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                <!-- Right: Info Details -->
+                <div class="contact-info-box">
+                    <div class="info-item">
+                        <i class="fas fa-home"></i>
+                        <div class="info-content">
+                            <h3>Buttonwood, California</h3>
+                            <p>Rosemead, CA 91770</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info-content">
+                            <h3>+00 (440) 9865 562</h3>
+                            <p>Mon to Fri 9am to 6pm</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <h3>support@colorlib.com</h3>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.714533036712!2d-118.0833!3d34.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAzJzAwLjAiTiAxMTjCsDA1JzAwLjAiVw!5e0!3m2!1sen!2sPK!4v1620000000000!5m2!1sen!2sPK" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Us Col -->
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                    <p>Copyright ©2026 All rights reserved | This template is made with <i class="far fa-heart" style="color: #ffb400;"></i> by <span>Colorlib</span></p>
+                </div>
+                <!-- Newsletter Col -->
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Stay update with our latest</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter Email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <!-- Follow Us Col -->
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <p>Let us be social</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Designed strictly with pure HTML & CSS</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
